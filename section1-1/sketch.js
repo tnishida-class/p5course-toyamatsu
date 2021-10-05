@@ -3,7 +3,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(100);
   strokeWeight(4);
   fill(178, 10, 162);
   triangle(12,60,116,120,116,10);
