@@ -20,13 +20,27 @@ function setup(){
   const gray = color(77);
 
   noStroke();
-  fill(41,67,135);
+  // 青い円
+  fill(blue);
   circle(300,100,120);
   fill(255);
   circle(295,95,110);
-  fill(41,135,42);
+
+  // 緑の円
+  fill(green);
   circle(290,95,105);
   fill(255);
   circle(287,100,95);
+
+
+  // テキスト
+  fill(gray);
+  textSize(25);
+  textFont("serif");
+  text("KOBE", 250, 90);
+  textSize(10);
+  text("UNIVERSITY",270,105);
+
+
 
 }
