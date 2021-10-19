@@ -9,12 +9,12 @@ function setup() {
   background(196);
   for(let i = 0; i < 9; i++){
     // 変えるのはここから
-    if(i % 3 == 2){
+    if(i < 3){
       strokeWeight(3);
     }
 
 
-    else if(i % 3 == 1) {
+    else if(i < 6) {
       strokeWeight(2);
     }
 
