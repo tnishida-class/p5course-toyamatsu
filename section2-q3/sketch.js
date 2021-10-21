@@ -8,28 +8,61 @@ function setup() {
   createCanvas(400, 400);
   background(255);
   stroke(255);
-  strokeWeight(3);
+  strokeWeight(2.5);
 
-  const cx = width / 2; // 中心は (cx, cy)
-  const cy = height / 2;
-  const maxR = min(width, height); // 大きさは幅と高さのうち小さい方
+// 黒の大円
+fill(black);
+circle(200,200,400);
 
-  drawCircle(black, maxR);
-  drawArcs(green, red, maxR * 0.8);
-  // BLANK[1] (hint: drawArcs x 3, drawCircle x 1)
-  drawCircle(red, maxR * 0.05);
-}
+// 赤と緑の縁
+fill(green);
+circle(200,200,320);
 
-function drawCircle(c, r){
-  fill(c);
-  ellipse(cx, cy, r, r);
-}
-
-function drawArcs(c1, c2, r) {
-  for (let i = 0; i < 20; i++) {
-    let start = TWO_PI / 20 * i;
-    let stop = TWO_PI / 20 * (i + 1);
-    fill(i % 2 == 0 ? c1 : c2);
-    arc(cx, cy, r, r, start, stop, PIE);
+for(let i=0; i<20;i++){
+  if(i%2==0){
+    fill(red);
+    arc(200,200,320,320,0.314*i,0.314*(i+1),PIE);
   }
+}
+
+// 黒とクリームの連続したパイ
+fill(black);
+circle(200,200,300);
+
+for(let i=0; i<20;i++){
+  if(i%2==1){
+    fill(cream);
+    arc(200,200,300,300,0.314*i,0.314*(i+1),PIE);
+  }
+}
+
+// 上で作った物の小さい版を作る
+fill(green);
+circle(200,200,200);
+
+for(let i=0; i<20;i++){
+  if(i%2==0){
+    fill(red);
+    arc(200,200,200,200,0.314*i,0.314*(i+1),PIE);
+  }
+}
+
+fill(black);
+circle(200,200,180);
+
+for(let i=0; i<20;i++){
+  if(i%2==1){
+    fill(cream);
+    arc(200,200,180,180,0.314*i,0.314*(i+1),PIE);
+  }
+}
+
+// 中心にある緑の円と赤の縁
+fill(green);
+circle(200,200,50);
+fill(red);
+circle(200,200,25);
+
+
+
 }
