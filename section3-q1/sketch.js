@@ -17,8 +17,9 @@ function setup(){
 
 function draw(){
   background(160, 192, 255);
+  // let z = random(0,255);
   textSize(50);
-  fill(0);
+  fill(x,50,50);
   text("WINDOWS",x,y);
   x += vx
   y += vy
