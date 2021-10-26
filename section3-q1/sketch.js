@@ -13,7 +13,6 @@ function setup(){
   y = height / 2;
   vx = 5;
   vy = 5;
-
 }
 
 function draw(){
@@ -24,16 +23,15 @@ function draw(){
   x += vx
   y += vy
 
-
   if(x-10 < 0 || x+250 > width){ vx = -1 * vx; }
-  if(y > height || y-10 < 0){ vy = -1 * vy; }
+  if(y > height || y-25 < 0){ vy = -1 * vy; }
   x = constrain(x, 0, width);
   y = constrain(y, 0, height);
+}
 
-
-
-
-
+function mouseClicked(){
+  x = mouseX;
+  y = mouseY;
 }
 
 function windowResized(){
