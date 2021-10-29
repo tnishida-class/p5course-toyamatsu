@@ -7,7 +7,10 @@ function setup(){
   // 配列をランダムに初期化する
   let scores = [];
   for(let i = 0; i < 10; i++){
-    scores[i] = random(60, 100); // 60以上100未満のランダムな数を代入
+    scores[i] = random(10, 100); // 60以上100未満のランダムな数を代入
+    let y = round(scores[i]);
+    textSize(10);
+    text(y,10,i*30+10);
   }
 
   // 円グラフを描くには割合が必要なので合計を計算しておく
@@ -15,18 +18,22 @@ function setup(){
   for(let i = 0; i < scores.length; i++){
      total += scores[i];
     }
+// なぜかわからないけどうまく行った・・・
+  let x = 0;
+  let y = 0;
+    for(let i = 0; i < scores.length; i++){
+      x += scores[i];
+      // y += scores[i-1];
 
-
-    for(let i = 1; i < scores.length; i++){
-    noFill();
-    stroke(0);
-    strokeWeight(1);
-    // if(i = 0){
-      arc(200, 200, 300, 300, scores[i-1]/total, scores[i]/total, PIE);
-    // }
-    // else{
-    //   arc(200, 200, 300, 300, scores[i-1]/total, scores[i]/total, PIE);
-    // }
+      noFill();
+      stroke(0);
+      strokeWeight(1);
+      // if(i = 0){
+        arc(200, 200, 300, 300, 0,x/total*3.14*2, PIE);
+      // }
+      // else{
+      //   arc(200, 200, 300, 300, y/total*3.14, x/total*3.14, PIE);
+      // }
   }
 
 
