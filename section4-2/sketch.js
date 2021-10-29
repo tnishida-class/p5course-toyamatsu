@@ -11,19 +11,32 @@ function setup(){
 
 function draw(){
   background(160, 192, 255);
+
   for(let i = 0; i < balls.length; i++){
     let b = balls[i];
     ellipse(b.x, b.y, b.size);
     b.x += b.vx;
     b.y += b.vy;
   }
+  // if(balls.length < 50){
+    let ballX = random(5, windowWidth);
+    let ballY = random(5, windowHeight);
+    let speedX = random(0.5, 5);
+    let speedY = random(0.5, 5);
+    const b = { x: ballX, y: ballY, size: 30, vx: speedX, vy: speedY };
+    balls.push(b);
+  // }
+
 }
+
+
 
 function mouseDragged(){
   const dx = mouseX - pmouseX;
   const dy = mouseY - pmouseY;
+  let ballSize = random(5,70);
   if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
+    const b = { x: mouseX, y: mouseY, size: ballSize, vx: dx, vy: dy };
     balls.push(b);
   }
 }
