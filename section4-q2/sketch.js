@@ -18,22 +18,14 @@ function setup(){
   for(let i = 0; i < scores.length; i++){
      total += scores[i];
     }
-// なぜかわからないけどうまく行った・・・
-  let x = 0;
-  let y = 0;
-    for(let i = 0; i < scores.length; i++){
-      x += scores[i];
-      // y += scores[i-1];
 
+  let x = 0;
+  for(let i = 0; i < scores.length; i++){
+      x += scores[i];
       noFill();
       stroke(0);
       strokeWeight(1);
-      // if(i = 0){
-        arc(200, 200, 300, 300, 0,x/total*3.14*2, PIE);
-      // }
-      // else{
-      //   arc(200, 200, 300, 300, y/total*3.14, x/total*3.14, PIE);
-      // }
+      arc(200, 200, 300, 300, 0, x/total * 3.14 * 2, PIE);
   }
 
 
