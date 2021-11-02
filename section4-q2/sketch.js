@@ -20,12 +20,15 @@ function setup(){
     }
 
   let x = 0;
+  let y = 0;
+
   for(let i = 0; i < scores.length; i++){
       x += scores[i];
-      noFill();
+      y += scores[i-1];
+      fill(250,250,200);
       stroke(0);
       strokeWeight(1);
-      arc(200, 200, 300, 300, 0, x/total * 3.14 * 2, PIE);
+      arc(200, 200, 300, 300, y/total * 3.14 * 2, x/total * 3.14 * 2, PIE);
   }
 
 
