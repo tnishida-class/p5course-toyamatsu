@@ -12,7 +12,7 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   x = width / 2;
   y = height / 2;
-  ballSize = 50;
+  ballSize = 200;
 
   vx = 5;
   vy = 5;
@@ -21,26 +21,15 @@ function setup(){
 function draw(){
   background(160, 192, 255);
   fill(250)
-  if(ballSize < 600){
+  if(ballSize < 300){
     ellipse(x, y, ballSize);
-    ballSize += 2;
+    ballSize += 7;
   }else{
     ballSize = 50;
   }
   if(keyIsDown(UP_ARROW)){
-    ballSize += 6
+    ballSize += 16;
   }
-  // let z = random(0,255);
-  // textSize(50);
-  // fill(x,50,50);
-  // text("WINDOWS",x,y);
-  // x += vx
-  // y += vy
-  //
-  // if(x-10 < 0 || x+250 > width){ vx = -1 * vx; }
-  // if(y > height || y-25 < 0){ vy = -1 * vy; }
-  // x = constrain(x, 0, width);
-  // y = constrain(y, 0, height);
 }
 
 function mouseClicked(){
