@@ -19,16 +19,16 @@ function setup(){
      total += scores[i];
     }
 
-  let x = 0;
-  let y = 0;
-
+// https://kiwasalog.com/caprice/js-draw-graph.html
+  let startAngle = 0;
+  noFill();
+  fill(230);
+  stroke(0);
+  strokeWeight(1);
   for(let i = 0; i < scores.length; i++){
-      x += scores[i];
-      y += scores[i-1];
-      fill(250,250,200);
-      stroke(0);
-      strokeWeight(1);
-      arc(200, 200, 300, 300, y/total * 3.14 * 2, x/total * 3.14 * 2, PIE);
+    let endAngle = scores[i]/total+startAngle;
+    arc(200, 200, 300, 300, startAngle*Math.PI*2, endAngle*Math.PI*2, PIE);
+    startAngle = endAngle;
   }
 
 

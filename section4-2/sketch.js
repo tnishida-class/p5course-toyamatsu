@@ -18,18 +18,15 @@ function draw(){
     b.x += b.vx;
     b.y += b.vy;
   }
-  // if(balls.length < 50){
+
     let ballX = random(5, windowWidth);
     let ballY = random(5, windowHeight);
     let speedX = random(0.5, 5);
     let speedY = random(0.5, 5);
     const b = { x: ballX, y: ballY, size: 30, vx: speedX, vy: speedY };
     balls.push(b);
-  // }
 
 }
-
-
 
 function mouseDragged(){
   const dx = mouseX - pmouseX;
