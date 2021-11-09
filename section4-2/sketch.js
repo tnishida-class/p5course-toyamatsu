@@ -3,6 +3,7 @@
 // 練習問題：何も操作しなくてもボールが湧いてくる機能を追加しよう
 
 let balls;
+let count = 0;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -10,6 +11,7 @@ function setup(){
 }
 
 function draw(){
+  count++;
   background(160, 192, 255);
 
   for(let i = 0; i < balls.length; i++){
@@ -19,12 +21,15 @@ function draw(){
     b.y += b.vy;
   }
 
-    let ballX = random(5, windowWidth);
-    let ballY = random(5, windowHeight);
-    let speedX = random(0.5, 5);
-    let speedY = random(0.5, 5);
+  let ballX = windowWidth/2;
+  let ballY = windowHeight/2;
+  let speedX = random(-5, 5);
+  let speedY = random(-5, 5);
+
+  if(count % 30 == 0){
     const b = { x: ballX, y: ballY, size: 30, vx: speedX, vy: speedY };
     balls.push(b);
+  }
 
 }
 
