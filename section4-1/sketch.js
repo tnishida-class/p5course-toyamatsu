@@ -66,6 +66,7 @@ function setup(){
   }
 
   // BLANK[5] 平均点の線を引きます
+  // 0〜100におさまるのでaverage/100
   stroke(0,255,0);
-  line(0, height-average*height/100, width, height-average*height/100);
+  line(0, height - height*average/100, width, height- height*average/100);
 }
