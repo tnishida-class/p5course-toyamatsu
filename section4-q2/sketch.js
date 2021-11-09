@@ -26,8 +26,11 @@ function setup(){
   stroke(0);
   strokeWeight(1);
   for(let i = 0; i < scores.length; i++){
-    let endAngle = scores[i]/total+startAngle;
-    arc(200, 200, 300, 300, startAngle*Math.PI*2, endAngle*Math.PI*2, PIE);
+    // 円の合計は360度、scores[i]/totalはそれぞれの要素の全体に対しての割合
+    // その割合を角度に変換したいので360を掛ける
+    let endAngle = scores[i]/total*360 + startAngle;
+    // 度をradianに変換する公式 radian = degree * π/180
+    arc(200, 200, 300, 300, startAngle*Math.PI/180, endAngle*Math.PI/180, PIE);
     startAngle = endAngle;
   }
 
