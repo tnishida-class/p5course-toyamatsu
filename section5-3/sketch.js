@@ -6,10 +6,10 @@ function setup(){
   // isLeapYear の動作確認のため console に出力しています
   for(let i = 2000; i <= 2100; i++){
     if(isLeapYear(i)){
-      console.log(i + "年はうるう年です");
+      console.log(i + "年はうるう年です。1年間は" + daysInYear(i) + "日でした。");
     }
     else{
-      console.log(i + "年はうるう年ではありません");
+      console.log(i + "年はうるう年ではありません。1年間は" + daysInYear(i) + "日でした。");
     }
   }
 }
@@ -26,7 +26,11 @@ function isLeapYear(y){
 }
 
 function daysInYear(y){
-  // BLANK[1]
+  if(isLeapYear(y)){
+    return 366;
+  }else{
+    return 365;
+  }
 }
 
 function daysInMonth(y, m){
@@ -50,7 +54,11 @@ function dayOfYear(y, m, d){
 }
 
 function dayOfWeek(y, m, d){
-  // BLANK[2]
+  let count = 0;
+  for(i = 1945; i < y; i++){
+    count += daysInYear(i);
+  }
+  return (count+dayOfYear(y, m, d))%7;
 }
 
 function dayOfWeekAsString(dow){
